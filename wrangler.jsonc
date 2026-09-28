@@ -1,0 +1,35 @@
+{
+  "name": "rag-chatbot",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-09-01",
+  "compatibility_flags": ["nodejs_compat"],
+
+  "ai": {
+    "binding": "AI"
+  },
+
+  "vectorize": [
+    {
+      "binding": "VECTORIZE",
+      "index_name": "rag-documents"
+    }
+  ],
+
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "rag-metadata",
+      "database_id": "554075a4-5da4-4964-ba79-b3e8f702acc4",
+      "migrations_dir": "./migrations"
+    }
+  ],
+
+  "vars": {
+    "ENVIRONMENT": "production"
+  },
+
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  }
+}

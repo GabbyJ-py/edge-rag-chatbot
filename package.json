@@ -1,0 +1,24 @@
+{
+  "name": "rag-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "types": "wrangler types",
+    "type-check": "tsc --noEmit",
+    "db:migrate:local": "wrangler d1 migrations apply rag-metadata --local",
+    "db:migrate:remote": "wrangler d1 migrations apply rag-metadata --remote",
+    "db:schema:local": "wrangler d1 execute rag-metadata --local --file ./migrations/0001_initial_schema.sql",
+    "db:schema:remote": "wrangler d1 execute rag-metadata --remote --file ./migrations/0001_initial_schema.sql"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260928.1",
+    "typescript": "^7.0.2",
+    "wrangler": "^4.142.0"
+  }
+}
