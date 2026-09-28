@@ -33,7 +33,7 @@ export async function handleWebhookSync(
   const rawBody = await request.text();
 
   // 2. Verify HMAC-SHA256 signature.
-  const signature = request.headers.get("x-sanity-signature") ?? "";
+  const signature = request.headers.get("sanity-webhook-signature") ?? "";
   const isValid = await verifyWebhookSignature(
     rawBody,
     signature,
